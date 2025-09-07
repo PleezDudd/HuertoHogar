@@ -1,0 +1,113 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  </head>
+  <body>
+      <!-- Header -->
+  <header class="site-header">
+    <div class="container header-wrap">
+      <div class="logo">🥑 HuertoHogar</div>
+      <nav>
+        <ul class="nav">
+          <li><a href="./Index.html">Inicio</a></li>
+          <li><a href="./Productos.html">Catálogo</a></li>
+          <li><a href="./Blogs.html">Blog</a></li>
+          <li><a href="./Unete.html">Únete</a></li>
+          <li><a href="./Carrito.html">Carrito <i class="fa-solid fa-cart-shopping"></i></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Catálogo (categorías) -->
+  <section id="catalogo" class="catalogo">
+    <div class="container">
+      <h2>Categorías</h2>
+      <div class="grid-categorias">
+        <div class="categoria">Frutas Frescas</div>
+        <div class="categoria">Verduras Orgánicas</div>
+        <div class="categoria">Productos Orgánicos</div>
+        <div class="categoria">Productos Lácteos</div>
+      </div>
+
+      <!-- Filtros (placeholder visual) -->
+      <div class="filtros">
+        <input type="text" placeholder="Buscar productos..." aria-label="Buscar productos"/>
+        <select aria-label="Filtrar por categoría">
+          <option value="">Todas las categorías</option>
+          <option>Frutas Frescas</option>
+          <option>Verduras Orgánicas</option>
+          <option>Productos Orgánicos</option>
+          <option>Productos Lácteos</option>
+        </select>
+        <button class="btn btn-outline">Filtrar</button>
+      </div>
+
+      <!-- Destacados (ejemplos del PDF) -->
+      <h3 class="subtle-title">Destacados</h3>
+      <div class="grid-productos">
+        <article class="producto">
+          <h4>FR001 — Manzanas Fuji</h4>
+          <p class="precio">$1.200 CLP / kg</p>
+          <p class="desc">Crujientes y dulces, del Valle del Maule. Stock: 150 kg.</p>
+          <button class="btn btn-primary">Agregar al carrito</button>
+        </article>
+
+        <article class="producto">
+          <h4>FR002 — Naranjas Valencia</h4>
+          <p class="precio">$1.000 CLP / kg</p>
+          <p class="desc">Jugosas y ricas en vitamina C. Stock: 200 kg.</p>
+          <button class="btn btn-primary">Agregar al carrito</button>
+        </article>
+
+        <article class="producto">
+          <h4>VR001 — Zanahorias Orgánicas</h4>
+          <p class="precio">$900 CLP / kg</p>
+          <p class="desc">Cultivadas sin pesticidas en O'Higgins. Stock: 100 kg.</p>
+          <button class="btn btn-primary">Agregar al carrito</button>
+        </article>
+
+        <article class="producto">
+          <h4>PO001 — Miel Orgánica</h4>
+          <p class="precio">$5.000 CLP / 500g</p>
+          <p class="desc">Miel pura de apicultores locales. Stock: 50 frascos.</p>
+          <button class="btn btn-primary">Agregar al carrito</button>
+        </article>
+      </div>
+
+      <!-- Footer -->
+  <footer id="contacto" class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>HuertoHogar</h3>
+        <p>Frescura y calidad, directo del campo a tu mesa.</p>
+      </div>
+      <div>
+        <h4>Ayuda</h4>
+        <ul>
+          <li><a href="#">Preguntas frecuentes</a></li>
+          <li><a href="#">Políticas de envío</a></li>
+          <li><a href="#">Devoluciones</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Conecta</h4>
+        <ul>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">TikTok</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy">© 2025 HuertoHogar. Todos los derechos reservados.</div>
+  </footer>
+
+  </body>
+  </html>
+  
+
