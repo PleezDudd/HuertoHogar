@@ -1,14 +1,16 @@
-  <!DOCTYPE html>
-  <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  </head>
-  <body>
-      <!-- Header -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+  <!-- Header -->
   <header class="site-header">
     <div class="container header-wrap">
       <div class="logo">🥑 HuertoHogar</div>
@@ -37,7 +39,7 @@
 
       <!-- Filtros (placeholder visual) -->
       <div class="filtros">
-        <input type="text" placeholder="Buscar productos..." aria-label="Buscar productos"/>
+        <input type="text" placeholder="Buscar productos..." aria-label="Buscar productos" />
         <select aria-label="Filtrar por categoría">
           <option value="">Todas las categorías</option>
           <option>Frutas Frescas</option>
@@ -52,62 +54,126 @@
       <h3 class="subtle-title">Destacados</h3>
       <div class="grid-productos">
         <article class="producto">
-          <h4>FR001 — Manzanas Fuji</h4>
+
+          <h4>FR001 - Manzanas Fuji</h4>
+          <img src="img\Manzanas.png" alt="Manzanas Fuji">
           <p class="precio">$1.200 CLP / kg</p>
-          <p class="desc">Crujientes y dulces, del Valle del Maule. Stock: 150 kg.</p>
+          <ul>
+            <li>Stock: 150 kg.</li>
+            <li>Descripción: Manzanas Fuji crujientes y dulces, cultivadas en el Valle del Maule.
+              Perfectas para meriendas saludables o como ingrediente en postres. Estas manzanas
+              son conocidas por su textura firme y su sabor equilibrado entre dulce y ácido.</li>
+          </ul>
           <button class="btn btn-primary">Agregar al carrito</button>
         </article>
 
         <article class="producto">
-          <h4>FR002 — Naranjas Valencia</h4>
+          <h4>FR002 - Naranjas Valencia</h4>
+          <img src="img\Naranjas.png" alt="Naranjas Valencia">
           <p class="precio">$1.000 CLP / kg</p>
-          <p class="desc">Jugosas y ricas en vitamina C. Stock: 200 kg.</p>
+          <ul>
+            <li>Stock: 200 kg.</li>
+            <li>Descripción: Jugosas y ricas en vitamina C, estas naranjas Valencia son ideales para
+              zumos frescos y refrescantes. Cultivadas en condiciones climáticas óptimas que
+              aseguran su dulzura y jugosidad.</li>
+          </ul>
           <button class="btn btn-primary">Agregar al carrito</button>
         </article>
 
         <article class="producto">
-          <h4>VR001 — Zanahorias Orgánicas</h4>
+          <h4>FR003 - Plátanos Cavendish</h4>
+          <img src="img\Platanos.png" alt="Plátanos Cavendish">
+          <p class="precio">$800 CLP / kg</p>
+          <ul>
+            <li>Stock: 250 kg.</li>
+            <li>Descripción: Plátanos maduros y dulces, perfectos para el desayuno o como snack
+              energético. Estos plátanos son ricos en potasio y vitaminas, ideales para mantener una
+              dieta equilibrada.</li>
+          </ul>
+          <button class="btn btn-primary">Agregar al carrito</button>
+        </article>
+
+        <article class="producto">
+          <h4>VR001 - Zanahorias Orgánicas</h4>
+          <img src="img\Zanahorias.png" alt="Zanahorias Orgánicas">
           <p class="precio">$900 CLP / kg</p>
-          <p class="desc">Cultivadas sin pesticidas en O'Higgins. Stock: 100 kg.</p>
+          <ul>
+            <li>Stock: 100 kg.</li>
+            <li>Descripción: Zanahorias crujientes cultivadas sin pesticidas en la Región de O'Higgins.
+              Excelente fuente de vitamina A y fibra, ideales para ensaladas, jugos o como snack
+              saludable</li>
+          </ul>
           <button class="btn btn-primary">Agregar al carrito</button>
         </article>
 
         <article class="producto">
-          <h4>PO001 — Miel Orgánica</h4>
-          <p class="precio">$5.000 CLP / 500g</p>
-          <p class="desc">Miel pura de apicultores locales. Stock: 50 frascos.</p>
+          <h4>VR002 - Espinacas Frescas</h4>
+          <img src="img\Espinacas.png" alt="Espinacas Frescas">
+          <p class="precio">$700 CLP / bolsa de 500g</p>
+          <ul>
+            <li>Stock: 80 bolsas.</li>
+            <li>Descripción: Espinacas frescas y nutritivas, perfectas para ensaladas y batidos verdes.
+              Estas espinacas son cultivadas bajo prácticas orgánicas que garantizan su calidad y valor
+              nutricional.</li>
+          </ul>
           <button class="btn btn-primary">Agregar al carrito</button>
         </article>
+
+        <article class="producto">
+          <h4>VR003 - Pimientos Tricolores</h4>
+          <img src="img\Pimientos.png" alt="Pimientos Tricoleres">
+          <p class="precio">$1.500 CLP / kg</p>
+          <ul>
+            <li>Stock: 120 kilos.</li>
+            <li>Descripción: Pimientos rojos, amarillos y verdes, ideales para salteados y platos
+              coloridos. Ricos en antioxidantes y vitaminas, estos pimientos añaden un toque vibrante
+              y saludable a cualquier receta.</li>
+          </ul>
+          <button class="btn btn-primary">Agregar al carrito</button>
+        </article>
+
+        <article class="producto">
+          <h4>PO001 - Miel Orgánica</h4>
+          <img src="img\Miel.png" alt="Miel Orgánica">
+          <p class="precio">$5.000 CLP por frasco de 500g</p>
+          <ul>
+            <li>Stock: 50 Frascos.</li>
+            <li>Descripción: Miel pura y orgánica producida por apicultores locales. Rica en
+              antioxidantes y con un sabor inigualable, perfecta para endulzar de manera natural tus
+              comidas y bebidas.</li>
+          </ul>
+          <button class="btn btn-primary">Agregar al carrito</button>
+        </article>
+
       </div>
 
       <!-- Footer -->
-  <footer id="contacto" class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <h3>HuertoHogar</h3>
-        <p>Frescura y calidad, directo del campo a tu mesa.</p>
-      </div>
-      <div>
-        <h4>Ayuda</h4>
-        <ul>
-          <li><a href="#">Preguntas frecuentes</a></li>
-          <li><a href="#">Políticas de envío</a></li>
-          <li><a href="#">Devoluciones</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Conecta</h4>
-        <ul>
-          <li><a href="#">Instagram</a></li>
-          <li><a href="#">Facebook</a></li>
-          <li><a href="#">TikTok</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="copy">© 2025 HuertoHogar. Todos los derechos reservados.</div>
-  </footer>
+      <footer id="contacto" class="site-footer">
+        <div class="container footer-grid">
+          <div>
+            <h3>HuertoHogar</h3>
+            <p>Frescura y calidad, directo del campo a tu mesa.</p>
+          </div>
+          <div>
+            <h4>Ayuda</h4>
+            <ul>
+              <li><a href="#">Preguntas frecuentes</a></li>
+              <li><a href="#">Políticas de envío</a></li>
+              <li><a href="#">Devoluciones</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Conecta</h4>
+            <ul>
+              <li><a href="#">Instagram</a></li>
+              <li><a href="#">Facebook</a></li>
+              <li><a href="#">TikTok</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="copy">© 2025 HuertoHogar. Todos los derechos reservados.</div>
+      </footer>
 
-  </body>
-  </html>
-  
+</body>
 
+</html>
