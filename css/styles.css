@@ -1,21 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
-img{
-    width:240px;
-    border-radius: 15px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+img {
+  width: 240px;
+  border-radius: 15px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
-.stock{
-    font-weight: bold;
+
+.stock {
+  font-weight: bold;
 }
+
 /* ===== Reset ===== */
 * {
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
 }
@@ -27,7 +30,10 @@ body {
   color: #333333;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: 'Playfair Display', serif;
   color: #8B4513;
   margin: 0 0 0.5rem;
@@ -401,4 +407,177 @@ p {
   .mapa-wrap {
     grid-template-columns: 1.2fr 0.8fr;
   }
+}
+
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #F7F7F7;
+  padding: 20px 10px;
+}
+
+.sidebar-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.sidebar .logo {
+  font-weight: bold;
+  font-size: 24px;
+  color: #2E8B57;
+}
+
+.nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  display: block;
+  padding: 15px 20px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+
+.nav a:hover {
+  background-color: #2E8B57;
+  color: #fff;
+}
+
+/* Main content (para que el contenido no quede debajo del menú) */
+.main-content {
+  margin-left: 250px;
+  padding: 20px;
+}
+
+/* Hero */
+.hero {
+  padding: 72px 0 54px;
+  text-align: center;
+  background: #F9FCFA;
+}
+
+.hero-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  color: #2E8B57;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+/* Botones */
+.btn {
+  display: inline-block;
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-weight: 700;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: #2E8B57;
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  filter: brightness(1.05);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid #2E8B57;
+  color: #2E8B57;
+}
+
+.btn-outline:hover {
+  background: #2E8B57;
+  color: #fff;
+}
+
+/* Tablas */
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabla th,
+.tabla td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.tabla th {
+  background-color: #2E8B57;
+  color: white;
+}
+
+.tabla td {
+  background-color: #fff;
+}
+
+.tabla tr:hover {
+  background-color: #f5f5f5;
+}
+
+.agregar-producto-btn {
+  display: flex;
+  justify-content: center; /* Centra el contenido horizontalmente */
+  margin-top: 20px; /* Espacio superior para separar el botón de la tabla */
+}
+
+.agregar-producto-btn .btn {
+  padding: 12px 20px;
+  font-size: 1rem;
+}
+
+/* Ajustes para los cuadros de texto (input y textarea) */
+form input, form select, form textarea {
+  width: 100%;
+  padding: 14px 18px;
+  font-size: 1.1rem; /* Aumentamos el tamaño de la fuente */
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px; /* Separación entre los campos */
+  box-sizing: border-box;
+}
+
+form input:focus, form select:focus, form textarea:focus {
+  outline: 2px solid #2E8B57; /* Resaltar los cuadros de texto cuando se seleccionan */
+}
+
+/* Ajuste para el formulario, asegurando que los campos se alineen */
+.form-agregar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Espaciado entre los campos */
+  max-width: 600px; /* Ancho máximo del formulario */
+  margin: 0 auto; /* Centra el formulario */
+}
+
+.agregar-usuario-btn {
+  display: flex;
+  justify-content: center; /* Centra el contenido horizontalmente */
+  margin-top: 20px; /* Espacio superior para separar el botón de la tabla */
+}
+
+.agregar-usuario-btn .btn {
+  padding: 12px 20px;
+  font-size: 1rem;
 }
