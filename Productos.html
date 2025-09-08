@@ -4,15 +4,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Huerto Hogar - Catalogo</title>
   <link rel="stylesheet" href="./css/styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
@@ -26,7 +29,13 @@
           <li><a href="./Productos.html">Catálogo</a></li>
           <li><a href="./Blogs.html">Blog</a></li>
           <li><a href="./Unete.html">Únete</a></li>
-          <li><a href="./Carrito.html">Carrito <i class="fa-solid fa-cart-shopping"></i></a></li>
+          <li>
+            <a href="./Carrito.html">
+              Carrito <i class="fa-solid fa-cart-shopping"></i>
+              <span id="carrito-contador"
+                style="background:#388e3c;color:#fff;border-radius:50%;padding:2px 8px;font-size:0.9em;margin-left:4px;">0</span>
+            </a>
+          </li>
         </ul>
       </nav>
     </div>
@@ -70,7 +79,7 @@
               Perfectas para meriendas saludables o como ingrediente en postres. Estas manzanas
               son conocidas por su textura firme y su sabor equilibrado entre dulce y ácido.</p>
           </ul>
-          <button class="btn btn-primary">Agregar al carrito</button>
+          <button class="btn btn-primary agregar-carrito" data-id="FR001">Agregar al carrito</button>
         </article>
 
         <article class="producto">
@@ -83,7 +92,7 @@
               zumos frescos y refrescantes. Cultivadas en condiciones climáticas óptimas que
               aseguran su dulzura y jugosidad.</p>
           </ul>
-          <button class="btn btn-primary">Agregar al carrito</button>
+          <button class="btn btn-primary agregar-carrito" data-id="FR002">Agregar al carrito</button>
         </article>
 
         <article class="producto">
@@ -96,7 +105,7 @@
               energético. Estos plátanos son ricos en potasio y vitaminas, ideales para mantener una
               dieta equilibrada.</p>
           </ul>
-          <button class="btn btn-primary">Agregar al carrito</button>
+          <button class="btn btn-primary agregar-carrito" data-id="FR003">Agregar al carrito</button>
         </article>
 
         <article class="producto">
@@ -109,7 +118,7 @@
               Excelente fuente de vitamina A y fibra, ideales para ensaladas, jugos o como snack
               saludable</p>
           </ul>
-          <button class="btn btn-primary">Agregar al carrito</button>
+          <button class="btn btn-primary agregar-carrito" data-id="VR001">Agregar al carrito</button>
         </article>
 
         <article class="producto">
@@ -122,7 +131,7 @@
               Estas espinacas son cultivadas bajo prácticas orgánicas que garantizan su calidad y valor
               nutricional.</p>
           </ul>
-          <button class="btn btn-primary">Agregar al carrito</button>
+          <button class="btn btn-primary agregar-carrito" data-id="VR002">Agregar al carrito</button>
         </article>
 
         <article class="producto">
@@ -135,7 +144,7 @@
               coloridos. Ricos en antioxidantes y vitaminas, estos pimientos añaden un toque vibrante
               y saludable a cualquier receta.</p>
           </ul>
-          <button class="btn btn-primary">Agregar al carrito</button>
+          <button class="btn btn-primary agregar-carrito" data-id="VR003">Agregar al carrito</button>
         </article>
 
         <article class="producto">
@@ -148,7 +157,7 @@
               antioxidantes y con un sabor inigualable, perfecta para endulzar de manera natural tus
               comidas y bebidas.</p>
           </ul>
-          <button class="btn btn-primary">Agregar al carrito</button>
+          <button class="btn btn-primary agregar-carrito" data-id="PO001">Agregar al carrito</button>
         </article>
 
       </div>
@@ -179,6 +188,40 @@
         </div>
         <div class="copy">© 2025 HuertoHogar. Todos los derechos reservados.</div>
       </footer>
+
+      <script>
+function actualizarContadorCarrito() {
+  const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+  const totalCantidad = carrito.reduce((sum, prod) => sum + prod.cantidad, 0);
+  const contador = document.getElementById('carrito-contador');
+  if (contador) contador.innerText = totalCantidad;
+}
+
+document.querySelectorAll('.agregar-carrito').forEach(btn => {
+  btn.addEventListener('click', function () {
+    const producto = this.closest('.producto');
+    const id = this.getAttribute('data-id');
+    const nombre = producto.querySelector('h4').innerText;
+    const precio = producto.querySelector('.precio').innerText;
+    const img = producto.querySelector('img').getAttribute('src');
+
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    const existente = carrito.find(p => p.id === id);
+    if (existente) {
+      existente.cantidad += 1;
+    } else {
+      carrito.push({ id, nombre, precio, img, cantidad: 1 });
+    }
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+
+    // Elimina el alert y actualiza el contador en tiempo real
+    actualizarContadorCarrito();
+  });
+});
+
+// Actualiza el contador al cargar la página
+actualizarContadorCarrito();
+</script>
 
 </body>
 
