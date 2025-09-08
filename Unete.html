@@ -70,27 +70,7 @@
         <div class="copy">© 2025 HuertoHogar. Todos los derechos reservados.</div>
     </footer>
 
-    <script>
-        document.getElementById('loginForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const email = document.getElementById('loginEmail').value.trim();
-            const password = document.getElementById('loginPassword').value;
-
-            let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
-            const usuario = usuarios.find(u => u.email === email && u.password === password);
-
-            if (usuario) {
-                document.getElementById('loginMensaje').textContent = "Inicio de sesión exitoso.";
-                document.getElementById('loginMensaje').classList.remove('text-danger');
-                document.getElementById('loginMensaje').classList.add('text-success');
-                // Puedes redirigir aquí si lo deseas
-            } else {
-                document.getElementById('loginMensaje').textContent = "Correo o contraseña incorrectos.";
-                document.getElementById('loginMensaje').classList.remove('text-success');
-                document.getElementById('loginMensaje').classList.add('text-danger');
-            }
-            document.getElementById('loginForm').reset();
-        });
+    <script src="./js/login.js">
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
