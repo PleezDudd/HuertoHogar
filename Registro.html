@@ -96,34 +96,7 @@
         <div class="copy">© 2025 HuertoHogar. Todos los derechos reservados.</div>
     </footer>
 
-    <script>
-        document.getElementById('registroForm').addEventListener('submit', function (e) {
-            e.preventDefault();
-            const username = document.getElementById('username').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const password = document.getElementById('password').value;
-            const confirmPassword = document.getElementById('confirmPassword').value;
-
-            if (password !== confirmPassword) {
-                document.getElementById('mensaje').textContent = "Las contraseñas no coinciden.";
-                document.getElementById('mensaje').classList.add('text-danger');
-                return;
-            }
-
-            let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
-            usuarios.push({ username, email, password });
-            localStorage.setItem('usuarios', JSON.stringify(usuarios));
-
-            document.getElementById('mensaje').textContent = "";
-            document.getElementById('mensaje').classList.remove('text-danger');
-
-            // Mostrar modal de éxito
-            const modal = new bootstrap.Modal(document.getElementById('Modal'));
-            modal.show();
-
-            document.getElementById('registroForm').reset();
-        });
-    </script>
+    <script src="./js/registro.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
