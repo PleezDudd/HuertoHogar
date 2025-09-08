@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+    <!-- Header -->
+  <header class="site-header">
+    <div class="container header-wrap">
+      <div class="logo">🥑 HuertoHogar</div>
+      <nav>
+        <ul class="nav">
+          <li><a href="./index.html">Inicio</a></li>
+          <li><a href="./Productos.html">Catálogo</a></li>
+          <li><a href="./Blogs.html">Blog</a></li>
+          <li><a href="./Unete.html">Únete</a></li>
+          <li>
+            <a href="./Carrito.html">
+              Carrito <i class="fa-solid fa-cart-shopping"></i>
+              <span id="carrito-contador"
+                style="background:#388e3c;color:#fff;border-radius:50%;padding:2px 8px;font-size:0.9em;margin-left:4px;">0</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+    <div class="container">
+  <div class="grid-productos" style="grid-template-columns: 2fr 1fr; gap: 32px; align-items: flex-start;">
+    <!-- Imagen principal y miniaturas -->
+    <div>
+      <img id="main-img" src="" alt="" class="img-main" style="width:100%;max-width:550px;">
+      <div id="miniaturas" style="display:flex;gap:12px;margin-top:16px;"></div>
+    </div>
+    <!-- Info producto -->
+    <div class="producto" style="padding:32px;">
+      <h2 id="nombre-producto" style="margin-bottom:0.5rem;"></h2>
+      <span id="precio-producto" style="display:block;color:#2E8B57;font-size:1.5em;margin-bottom:0.5rem;"></span>
+      <div id="desc-producto" class="desc" style="margin-bottom:1.5rem;"></div>
+      <hr style="margin:18px 0;">
+      <form style="margin-bottom:1.5rem;">
+        <label for="cantidad" style="font-weight:600;">Cantidad</label>
+        <input type="number" id="cantidad" min="1" value="1" style="margin-left:12px;width:60px;padding:6px;">
+      </form>
+      <button class="btn btn-primary" id="agregar-carrito" style="width:100%;font-size:1.1em;">Añadir al carrito</button>
+    </div>
+  </div>
+  <!-- Productos relacionados -->
+  <div style="margin-top:40px;">
+    <h3 style="margin-bottom:18px;">Productos relacionados</h3>
+    <div id="relacionados" class="grid-productos" style="grid-template-columns: repeat(4, 1fr); gap: 18px;"></div>
+  </div>
+</div>
+    <footer id="contacto" class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>HuertoHogar</h3>
+        <p>Frescura y calidad, directo del campo a tu mesa.</p>
+      </div>
+      <div>
+        <h4>Ayuda</h4>
+        <ul>
+          <li><a href="#">Preguntas frecuentes</a></li>
+          <li><a href="#">Políticas de envío</a></li>
+          <li><a href="#">Devoluciones</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Conecta</h4>
+        <ul>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">TikTok</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy">© 2025 HuertoHogar. Todos los derechos reservados.</div>
+  </footer>
+    <script>
+    // Cambia la imagen principal al hacer clic en una miniatura
+    function cambiarImagen(img) {
+        document.getElementById('main-img').src = img.src;
+    }
+
+    // Actualiza el contador del carrito
+    function actualizarContadorCarrito() {
+  const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+  const totalCantidad = carrito.reduce((sum, prod) => sum + prod.cantidad, 0);
+  const contador = document.getElementById('carrito-contador');
+  if (contador) contador.innerText = totalCantidad;
+}
+
+    // Datos de productos (puedes ampliar según tus productos)
+const productos = {
+  FR001: {
+    nombre: "Manzanas Fuji",
+    precio: "$1.200 CLP / kg",
+    img: "img/Manzanas.png",
+    descripcion: "Manzanas Fuji crujientes y dulces, cultivadas en el Valle del Maule. Perfectas para meriendas saludables o como ingrediente en postres. Estas manzanas son conocidas por su textura firme y su sabor equilibrado entre dulce y ácido.",
+    max: 150
+  },
+  FR002: {
+    nombre: "Naranjas Valencia",
+    precio: "$1.000 CLP / kg",
+    img: "img/Naranjas.png",
+    descripcion: "Jugosas y ricas en vitamina C, ideales para zumos frescos y refrescantes.",
+    max: 200
+  },
+  FR003: {
+    nombre: "Plátanos Cavendish",
+    precio: "$800 CLP / kg",
+    img: "img/Platanos.png",
+    descripcion: "Plátanos maduros y dulces, perfectos para el desayuno o como snack energético.",
+    max: 250
+  },
+  VR001: {
+    nombre: "Zanahorias Orgánicas",
+    precio: "$900 CLP / kg",
+    img: "img/Zanahorias.png",
+    descripcion: "Zanahorias crujientes cultivadas sin pesticidas en la Región de O'Higgins.",
+    max: 100
+  },
+  VR002: {
+    nombre: "Espinacas Frescas",
+    precio: "$700 CLP / bolsa de 500g",
+    img: "img/Espinacas.png",
+    descripcion: "Espinacas frescas y nutritivas, perfectas para ensaladas y batidos verdes.",
+    max: 80
+  },
+  VR003: {
+    nombre: "Pimientos Tricolores",
+    precio: "$1.500 CLP / kg",
+    img: "img/Pimientos.png",
+    descripcion: "Pimientos rojos, amarillos y verdes, ideales para salteados y platos coloridos.",
+    max: 120
+  },
+  PO001: {
+    nombre: "Miel Orgánica",
+    precio: "$5.000 CLP por frasco de 500g",
+    img: "img/Miel.png",
+    descripcion: "Miel pura y orgánica producida por apicultores locales.",
+    max: 50
+  }
+};
+
+// Obtener el ID del producto de la URL
+const params = new URLSearchParams(window.location.search);
+const id = params.get('id');
+const producto = productos[id];
+
+// Miniaturas y relacionados sin el producto principal
+function renderMiniaturasYRelacionados(productos, idActual) {
+  // Miniaturas (excluye el producto actual)
+  const miniaturas = Object.entries(productos)
+    .filter(([pid]) => pid !== idActual)
+    .slice(0, 3) // máximo 3 miniaturas
+    .map(([pid, prod]) =>
+      `<img src="${prod.img}" alt="${prod.nombre}" class="img-thumb" onclick="cambiarImagen(this)" style="width:60px;height:60px;">`
+    ).join('');
+  document.getElementById('miniaturas').innerHTML = miniaturas;
+
+  // Relacionados (excluye el producto actual)
+  const relacionados = Object.entries(productos)
+    .filter(([pid]) => pid !== idActual)
+    .slice(0, 4) // máximo 4 relacionados
+    .map(([pid, prod]) =>
+      `<div class="producto" style="height:140px;display:flex;align-items:center;justify-content:center;">
+        <img src="${prod.img}" alt="${prod.nombre}" style="width:80px;height:80px;">
+      </div>`
+    ).join('');
+  document.getElementById('relacionados').innerHTML = relacionados;
+}
+
+if (producto) {
+  document.getElementById('main-img').src = producto.img;
+  document.getElementById('main-img').alt = producto.nombre;
+  document.getElementById('nombre-producto').innerText = producto.nombre;
+  document.getElementById('precio-producto').innerText = producto.precio;
+  document.getElementById('desc-producto').innerText = producto.descripcion;
+  document.getElementById('cantidad').max = producto.max;
+  document.getElementById('cantidad').value = 1;
+  document.getElementById('agregar-carrito').onclick = function () {
+    const cantidad = Math.max(1, Math.min(parseInt(document.getElementById('cantidad').value), producto.max));
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    const existente = carrito.find(p => p.id === id);
+    if (existente) {
+      existente.cantidad += cantidad;
+      existente.cantidad = Math.min(existente.cantidad, producto.max);
+    } else {
+      carrito.push({ id, nombre: producto.nombre, precio: producto.precio, img: producto.img, cantidad });
+    }
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+    actualizarContadorCarrito();
+  };
+
+  // Render miniaturas y relacionados sin el producto principal
+  renderMiniaturasYRelacionados(productos, id);
+}
+
+    actualizarContadorCarrito();
+    </script>
+
+</body>
+
+</html>

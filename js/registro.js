@@ -32,7 +32,5 @@ document.addEventListener('DOMContentLoaded', () => {
             msg.style.color = 'green';
             form.reset();
         }
-
-
  })
 });
