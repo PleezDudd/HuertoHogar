@@ -1,21 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet" />
 </head>
+
 <body>
-    <!-- Header -->
+  <!-- Header -->
   <header class="site-header">
     <div class="container header-wrap">
-      <div class="logo">🥑 HuertoHogar</div>
+      <!-- ...existing code... -->
+      <div class="logo">
+        <img src="img/logo_hh_2.png" alt="HuertoHogar Logo" class="logo-img">
+      </div>
+      <!-- ...existing code... -->
       <nav>
         <ul class="nav">
           <li><a href="./index.html">Inicio</a></li>
@@ -23,7 +32,13 @@
           <li><a href="./Blogs.html">Blog</a></li>
           <li><a href="./Unete.html">Únete</a></li>
           <li><a href="./Perfil.html">Perfil</a></li>
-          <li><a href="./Carrito.html">Carrito <i class="fa-solid fa-cart-shopping"></i></a></li>
+          <li>
+            <a href="./Carrito.html">
+              Carrito <i class="fa-solid fa-cart-shopping"></i>
+              <span id="carrito-contador"
+                style="background:#388e3c;color:#fff;border-radius:50%;padding:2px 8px;font-size:0.9em;margin-left:4px;">0</span>
+            </a>
+          </li>
         </ul>
       </nav>
     </div>
@@ -43,16 +58,18 @@
     <div class="container info-grid">
       <article class="card">
         <h2>Misión</h2>
-        <p>Proporcionar productos frescos y de calidad directamente desde el campo hasta la puerta de nuestros clientes, fomentando la conexión con agricultores locales y prácticas sostenibles.</p>
+        <p>Proporcionar productos frescos y de calidad directamente desde el campo hasta la puerta de nuestros clientes,
+          fomentando la conexión con agricultores locales y prácticas sostenibles.</p>
       </article>
       <article class="card">
         <h2>Visión</h2>
-        <p>Ser la tienda online líder en productos frescos y naturales en Chile, destacando por calidad, servicio y compromiso con la sostenibilidad, expandiendo nuestra presencia nacional e internacional.</p>
+        <p>Ser la tienda online líder en productos frescos y naturales en Chile, destacando por calidad, servicio y
+          compromiso con la sostenibilidad, expandiendo nuestra presencia nacional e internacional.</p>
       </article>
     </div>
   </section>
 
-    <!-- Mapa / Presencia -->
+  <!-- Mapa / Presencia -->
   <section id="mapa" class="mapa">
     <div class="container mapa-wrap">
       <div>
@@ -69,11 +86,17 @@
         </ul>
       </div>
       <!-- Placeholder de mapa (puedes reemplazar con iframe de Google Maps si quieres) -->
-      <div class="map-placeholder" role="img" aria-label="Mapa de presencia de tiendas">Mapa</div>
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.052100611771!2d-70.65746171867652!3d-33.4479491187408!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c507f91be917%3A0xcfac72a68dd4b986!2sDuoc%20UC%20-%20Sede%20Padre%20Alonso%20de%20Ovalle!5e0!3m2!1ses-419!2scl!4v1757800327633!5m2!1ses-419!2scl"
+          width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
     </div>
   </section>
 
-    <!-- Footer --><!-- Footer -->
+  <!-- Footer --><!-- Footer -->
   <footer id="contacto" class="site-footer">
     <div class="container footer-grid">
       <div>
@@ -99,5 +122,9 @@
     </div>
     <div class="copy">© 2025 HuertoHogar. Todos los derechos reservados.</div>
   </footer>
+
+  <!-- Script para el contador del carrito -->
+  <script src="./js/contador.js"></script>
 </body>
+
 </html>

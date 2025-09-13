@@ -1,30 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Huerto Hogar</title>
-    <link rel="stylesheet" href="./css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Huerto Hogar</title>
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+
 <body>
-     <!-- Header -->
+  <!-- Header -->
   <header class="site-header">
     <div class="container header-wrap">
-      <div class="logo">🥑 HuertoHogar</div>
+      <!-- ...existing code... -->
+      <div class="logo">
+        <img src="img/logo_hh_2.png" alt="HuertoHogar Logo" class="logo-img">
+      </div>
+      <!-- ...existing code... -->
       <nav>
         <ul class="nav">
           <li><a href="./Index.html">Inicio</a></li>
           <li><a href="./Productos.html">Catálogo</a></li>
           <li><a href="./Blogs.html">Blog</a></li>
           <li><a href="./Unete.html">Únete</a></li>
-          <li><a href="./Carrito.html">Carrito <i class="fa-solid fa-cart-shopping"></i></a></li>
+          <li>
+            <a href="./Carrito.html">
+              Carrito <i class="fa-solid fa-cart-shopping"></i>
+              <span id="carrito-contador"
+                style="background:#388e3c;color:#fff;border-radius:50%;padding:2px 8px;font-size:0.9em;margin-left:4px;">0</span>
+            </a>
+          </li>
         </ul>
       </nav>
     </div>
   </header>
 
-      <!-- Mapa / Presencia -->
+  <!-- Mapa / Presencia -->
   <section id="mapa" class="mapa">
     <div class="container mapa-wrap">
       <div>
@@ -72,5 +84,8 @@
     <div class="copy">© 2025 HuertoHogar. Todos los derechos reservados.</div>
   </footer>
 
+  <!-- Script para el contador del carrito -->
+  <script src="./js/contador.js"></script>
 </body>
+
 </html>

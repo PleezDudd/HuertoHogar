@@ -14,14 +14,24 @@
     <!-- Header -->
     <header class="site-header">
         <div class="container header-wrap">
-            <div class="logo">🥑 HuertoHogar</div>
+            <!-- ...existing code... -->
+            <div class="logo">
+                <img src="img/logo_hh_2.png" alt="HuertoHogar Logo" class="logo-img">
+            </div>
+            <!-- ...existing code... -->
             <nav>
                 <ul class="nav">
                     <li><a href="./Index.html">Inicio</a></li>
                     <li><a href="./Productos.html">Catálogo</a></li>
                     <li><a href="./Blogs.html">Blog</a></li>
                     <li><a href="./Unete.html">Únete</a></li>
-                    <li><a href="./Carrito.html">Carrito <i class="fa-solid fa-cart-shopping"></i></a></li>
+                    <li>
+                        <a href="./Carrito.html">
+                            Carrito <i class="fa-solid fa-cart-shopping"></i>
+                            <span id="carrito-contador"
+                                style="background:#388e3c;color:#fff;border-radius:50%;padding:2px 8px;font-size:0.9em;margin-left:4px;">0</span>
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -106,6 +116,7 @@
 
     <script src="./js/registro.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/contador.js"></script>
 </body>
 
 </html>
