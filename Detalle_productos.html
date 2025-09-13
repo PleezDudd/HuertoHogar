@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Detalle de producto</title>
   <link rel="stylesheet" href="./css/styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,11 +20,9 @@
   <!-- Header -->
   <header class="site-header">
     <div class="container header-wrap">
-      <!-- ...existing code... -->
       <div class="logo">
         <img src="img/logo_hh_2.png" alt="HuertoHogar Logo" class="logo-img">
       </div>
-      <!-- ...existing code... -->
       <nav>
         <ul class="nav">
           <li><a href="./index.html">Inicio</a></li>
@@ -64,12 +62,14 @@
           carrito</button>
       </div>
     </div>
+
     <!-- Productos relacionados -->
     <div style="margin-top:40px;">
       <h3 style="margin-bottom:18px;">Productos relacionados</h3>
       <div id="relacionados" class="grid-productos" style="grid-template-columns: repeat(4, 1fr); gap: 18px;"></div>
     </div>
   </div>
+
   <footer id="contacto" class="site-footer">
     <div class="container footer-grid">
       <div>
@@ -95,130 +95,9 @@
     </div>
     <div class="copy">© 2025 HuertoHogar. Todos los derechos reservados.</div>
   </footer>
-  <script>
-    // Cambia la imagen principal al hacer clic en una miniatura
-    function cambiarImagen(img) {
-      document.getElementById('main-img').src = img.src;
-    }
 
-    // Actualiza el contador del carrito
-    function actualizarContadorCarrito() {
-      const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-      const totalCantidad = carrito.reduce((sum, prod) => sum + prod.cantidad, 0);
-      const contador = document.getElementById('carrito-contador');
-      if (contador) contador.innerText = totalCantidad;
-    }
-
-    // Datos de productos (puedes ampliar según tus productos)
-    const productos = {
-      FR001: {
-        nombre: "Manzanas Fuji",
-        precio: "$1.200 CLP / kg",
-        img: "img/Manzanas.png",
-        descripcion: "Manzanas Fuji crujientes y dulces, cultivadas en el Valle del Maule. Perfectas para meriendas saludables o como ingrediente en postres. Estas manzanas son conocidas por su textura firme y su sabor equilibrado entre dulce y ácido.",
-        max: 150
-      },
-      FR002: {
-        nombre: "Naranjas Valencia",
-        precio: "$1.000 CLP / kg",
-        img: "img/Naranjas.png",
-        descripcion: "Jugosas y ricas en vitamina C, estas naranjas Valencia son ideales para zumos frescos y refrescantes. Cultivadas en condiciones climáticas óptimas que aseguran su dulzura y jugosidad.",
-        max: 200
-      },
-      FR003: {
-        nombre: "Plátanos Cavendish",
-        precio: "$800 CLP / kg",
-        img: "img/Platanos.png",
-        descripcion: "Plátanos maduros y dulces, perfectos para el desayuno o como snack energético. Estos plátanos son ricos en potasio y vitaminas, ideales para mantener una dieta equilibrada.",
-        max: 250
-      },
-      VR001: {
-        nombre: "Zanahorias Orgánicas",
-        precio: "$900 CLP / kg",
-        img: "img/Zanahorias.png",
-        descripcion: "Zanahorias crujientes cultivadas sin pesticidas en la Región de O'Higgins. Excelente fuente de vitamina A y fibra, ideales para ensaladas, jugos o como snack saludable",
-        max: 100
-      },
-      VR002: {
-        nombre: "Espinacas Frescas",
-        precio: "$700 CLP / bolsa de 500g",
-        img: "img/Espinacas.png",
-        descripcion: "Espinacas frescas y nutritivas, perfectas para ensaladas y batidos verdes. Estas espinacas son cultivadas bajo prácticas orgánicas que garantizan su calidad y valor nutricional.",
-        max: 80
-      },
-      VR003: {
-        nombre: "Pimientos Tricolores",
-        precio: "$1.500 CLP / kg",
-        img: "img/Pimientos.png",
-        descripcion: "Pimientos rojos, amarillos y verdes, ideales para salteados y platos coloridos. Ricos en antioxidantes y vitaminas, estos pimientos añaden un toque vibrante y saludable a cualquier receta.",
-        max: 120
-      },
-      PO001: {
-        nombre: "Miel Orgánica",
-        precio: "$5.000 CLP por frasco de 500g",
-        img: "img/Miel.png",
-        descripcion: "Miel pura y orgánica producida por apicultores locales. Rica en antioxidantes y con un sabor inigualable, perfecta para endulzar de manera natural tus comidas y bebidas.",
-        max: 50
-      }
-    };
-
-    // Obtener el ID del producto de la URL
-    const params = new URLSearchParams(window.location.search);
-    const id = params.get('id');
-    const producto = productos[id];
-
-    // Miniaturas y relacionados sin el producto principal
-    function renderMiniaturasYRelacionados(productos, idActual) {
-      // Miniaturas (excluye el producto actual)
-      const miniaturas = Object.entries(productos)
-        .filter(([pid]) => pid !== idActual)
-        .slice(0, 3) // máximo 3 miniaturas
-        .map(([pid, prod]) =>
-          `<img src="${prod.img}" alt="${prod.nombre}" class="img-thumb" onclick="cambiarImagen(this)" style="width:60px;height:60px;">`
-        ).join('');
-      document.getElementById('miniaturas').innerHTML = miniaturas;
-
-      // Relacionados (excluye el producto actual)
-      const relacionados = Object.entries(productos)
-        .filter(([pid]) => pid !== idActual)
-        .slice(0, 4) // máximo 4 relacionados
-        .map(([pid, prod]) =>
-          `<div class="producto" style="height:140px;display:flex;align-items:center;justify-content:center;">
-        <img src="${prod.img}" alt="${prod.nombre}" style="width:80px;height:80px;">
-      </div>`
-        ).join('');
-      document.getElementById('relacionados').innerHTML = relacionados;
-    }
-
-    if (producto) {
-      document.getElementById('main-img').src = producto.img;
-      document.getElementById('main-img').alt = producto.nombre;
-      document.getElementById('nombre-producto').innerText = producto.nombre;
-      document.getElementById('precio-producto').innerText = producto.precio;
-      document.getElementById('desc-producto').innerText = producto.descripcion;
-      document.getElementById('cantidad').max = producto.max;
-      document.getElementById('cantidad').value = 1;
-      document.getElementById('agregar-carrito').onclick = function () {
-        const cantidad = Math.max(1, Math.min(parseInt(document.getElementById('cantidad').value), producto.max));
-        let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-        const existente = carrito.find(p => p.id === id);
-        if (existente) {
-          existente.cantidad += cantidad;
-          existente.cantidad = Math.min(existente.cantidad, producto.max);
-        } else {
-          carrito.push({ id, nombre: producto.nombre, precio: producto.precio, img: producto.img, cantidad });
-        }
-        localStorage.setItem('carrito', JSON.stringify(carrito));
-        actualizarContadorCarrito();
-      };
-
-      // Render miniaturas y relacionados sin el producto principal
-      renderMiniaturasYRelacionados(productos, id);
-    }
-
-    actualizarContadorCarrito();
-  </script>
-
+  <script src="./js/imagenes.js"></script>
+  <script src="./js/contador.js"></script>
 </body>
 
 </html>
