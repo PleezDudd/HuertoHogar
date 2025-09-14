@@ -1,36 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Huerto Hogar - Perfil</title>
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
 </head>
-<body>
-  <header class="site-header">
-   <div class="container header-wrap">
-    <div class="logo">🥑 HuertoHogar</div>
-      <nav>
-        <ul class="nav">
-          <li><a href="./index.html">Inicio</a></li>
-          <li><a href="./Productos.html">Catálogo</a></li>
-          <li><a href="./Blogs.html">Blog</a></li>
-          <li><a href="./Unete.html">Únete</a></li>
-          <li><a href="./Perfil.html">Perfil</a></li>
-          <li><a href="./Carrito.html">Carrito <i class="fa-solid fa-cart-shopping"></i></a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
 
-  <div class="container de perfil">
-    <h2>Perfil de Usuario</h2>
-    <img id="img-prof" class="img-profile" src="./img/perfil.jpg" alt="Imagen de perfil">
-  </div>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container header-wrap">
+            <div class="logo">
+                <img src="img/logo_hh_2.png" alt="HuertoHogar Logo" class="logo-img">
+            </div>
+            <nav>
+                <ul class="nav">
+                    <li><a href="./index.html">Inicio</a></li>
+                    <li><a href="./Productos.html">Catálogo</a></li>
+                    <li><a href="./Blogs.html">Blog</a></li>
+                    <li><a href="./Unete.html">Únete</a></li>
+                    <li><a href="./Perfil.html">Perfil</a></li>
+                    <li>
+                        <a href="./Carrito.html">
+                            Carrito <i class="fa-solid fa-cart-shopping"></i>
+                            <span id="carrito-contador"
+                                style="background:#388e3c;color:#fff;border-radius:50%;padding:2px 8px;font-size:0.9em;margin-left:4px;">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container de perfil">
+        <h2>Perfil de Usuario</h2>
+        <img id="img-prof" class="img-profile" src="./img/perfil.jpg" alt="Imagen de perfil">
+
+        <!-- Información del usuario -->
+        <div id="perfil-info">
+            <!-- Los datos del usuario se llenarán con JavaScript -->
+        </div>
+    </div>
+
+    <script src="./js/contador.js"></script> <!-- Si lo necesitas para el contador del carrito -->
+    
+    <!-- Script para verificar sesión y redirigir si es necesario -->
+    <script>
+        // Verificar si hay sesión activa al cargar la página
+        const sesionActiva = localStorage.getItem('sesionActiva');
+        const usuarioActual = localStorage.getItem('usuarioActual');
+        
+        if (!sesionActiva || !usuarioActual) {
+            // Si no hay sesión activa, redirigir al login
+            window.location.href = './Registro.html';
+        }
+    </script>
+    
+    <script src="./js/perfil.js"></script>
 </body>
+
 </html>

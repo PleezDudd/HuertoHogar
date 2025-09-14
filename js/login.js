@@ -38,11 +38,23 @@ document.addEventListener("DOMContentLoaded", () => {
             msg.textContent = "Inicio de sesión exitoso.";
             msg.style.color = "green";
 
+            // Guardar información del usuario logueado (sin contraseña)
+            const usuarioLogueado = {
+                id: usuario.id,
+                usuario: usuario.usuario,
+                email: usuario.email,
+                rol: usuario.rol,
+                address: usuario.address,
+                phone: usuario.phone
+            };
+            localStorage.setItem('usuarioActual', JSON.stringify(usuarioLogueado));
+            localStorage.setItem('sesionActiva', 'true');
+
             // Redirección si es admin
             if (email === "admin@empresa.com") {
-                window.location.href = "/admin/home.html"; // Redirige al home del admin
+                window.location.href = "./admin/home.html"; // Redirige al home del admin
             } else {
-                window.location.href = "./index.html"; // Redirige a la página normal de usuario
+                window.location.href = "./Perfil.html"; // Redirige al perfil del usuario
             }
 
         } else {

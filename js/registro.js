@@ -39,12 +39,30 @@ document.addEventListener('DOMContentLoaded', () => {
             const id = usuarios.length > 0 ? usuarios[usuarios.length - 1].id + 1 : 1;
 
             // Guardar usuario
-            usuarios.push({ id, usuario, email, password, address, phone, rol: 'Usuario' });
+            const nuevoUsuario = { id, usuario, email, password, address, phone, rol: 'Usuario' };
+            usuarios.push(nuevoUsuario);
             localStorage.setItem('usuarios', JSON.stringify(usuarios));
 
-            msg.textContent = 'Registro exitoso.';
+            // Guardar información del usuario recién registrado en la sesión (sin contraseña)
+            const usuarioLogueado = {
+                id: nuevoUsuario.id,
+                usuario: nuevoUsuario.usuario,
+                email: nuevoUsuario.email,
+                rol: nuevoUsuario.rol,
+                address: nuevoUsuario.address,
+                phone: nuevoUsuario.phone
+            };
+            localStorage.setItem('usuarioActual', JSON.stringify(usuarioLogueado));
+            localStorage.setItem('sesionActiva', 'true');
+
+            msg.textContent = 'Registro exitoso. Redirigiendo al perfil...';
             msg.style.color = 'green';
             form.reset();
+
+            // Redirigir al perfil después de un breve delay
+            setTimeout(() => {
+                window.location.href = './Perfil.html';
+            }, 1500);
 
             // Actualizar tabla si existe contenedor
             mostrarUsuarios();

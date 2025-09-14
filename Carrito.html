@@ -4,26 +4,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Huerto Hogar</title>
+  <title>Huerto Hogar - Carrito</title>
   <link rel="stylesheet" href="./css/styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet" />
 </head>
 
 <body>
   <!-- Header -->
   <header class="site-header">
     <div class="container header-wrap">
-      <!-- ...existing code... -->
+      <!-- Logo -->
       <div class="logo">
         <img src="img/logo_hh_2.png" alt="HuertoHogar Logo" class="logo-img">
       </div>
-      <!-- ...existing code... -->
+      <!-- Menu superior -->
       <nav>
         <ul class="nav">
           <li><a href="./index.html">Inicio</a></li>
           <li><a href="./Productos.html">Catálogo</a></li>
           <li><a href="./Blogs.html">Blog</a></li>
           <li><a href="./Unete.html">Únete</a></li>
+          <li><a href="./Perfil.html">Perfil</a></li>
           <li>
             <a href="./Carrito.html">
               Carrito <i class="fa-solid fa-cart-shopping"></i>
@@ -36,7 +44,7 @@
     </div>
   </header>
 
-  <!-- Resumen del carrito (visual, sin JS) -->
+  <!-- Resumen del carrito (visual) -->
   <aside class="carrito">
     <h3>Tu carrito</h3>
     <ul class="mini-lista" id="mini-lista"></ul>
@@ -81,6 +89,9 @@
     </div>
     <div class="copy">© 2025 HuertoHogar. Todos los derechos reservados.</div>
   </footer>
+
+  <!-- Script para el contador del carrito -->
+  <script src="./js/contador.js"></script>
 
 </body>
 

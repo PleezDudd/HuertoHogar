@@ -67,7 +67,7 @@ p {
   top: 0;
   background: #ffffff;
   border-bottom: 1px solid #eeeeee;
-  ;
+  padding: 0 20px;
 }
 
 .header-wrap {
@@ -121,9 +121,10 @@ p {
   filter: brightness(1.05);
 }
 
-.btn-secondary {
+.btn-secondary { 
   background: #FFD700;
   color: #000000;
+  
 }
 
 .btn-outline {
@@ -598,4 +599,209 @@ form input:focus, form select:focus, form textarea:focus {
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 10px;
+}
+
+/* Estilos para el perfil de usuario */
+.container.de.perfil {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.container.de.perfil h2 {
+    margin-bottom: 2rem;
+    color: #8B4513;
+    font-size: 2.5rem;
+}
+
+.profile-data {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin: 2rem 0;
+    text-align: left;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.profile-field {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 10px;
+    border-left: 4px solid #388e3c;
+}
+
+.profile-field label {
+    font-weight: bold;
+    color: #8B4513;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.profile-field span {
+    color: #333;
+    font-size: 1.1rem;
+    padding: 0.5rem 0;
+}
+
+.role-badge {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.role-badge.administrador {
+    background: #ff6b6b;
+    color: white;
+}
+
+.role-badge.usuario {
+    background: #4ecdc4;
+    color: white;
+}
+
+.profile-actions {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.profile-actions .btn {
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.profile-actions .btn-outline {
+    background: transparent;
+    color: #388e3c;
+    border: 2px solid #388e3c;
+}
+
+.profile-actions .btn-outline:hover {
+    background: #388e3c;
+    color: white;
+}
+
+.profile-actions .btn-danger {
+    background: #dc3545;
+    color: white;
+    border: 2px solid #dc3545;
+}
+
+.profile-actions .btn-danger:hover {
+    background: #c82333;
+    border-color: #bd2130;
+}
+
+.no-session-message {
+    text-align: center;
+    padding: 2rem;
+    background: #fff3cd;
+    border: 1px solid #ffeaa7;
+    border-radius: 10px;
+    margin: 2rem 0;
+}
+
+.no-session-message h3 {
+    color: #856404;
+    margin-bottom: 1rem;
+}
+
+.no-session-message p {
+    color: #856404;
+    margin-bottom: 1.5rem;
+}
+
+.no-session-message .btn {
+    padding: 0.8rem 1.5rem;
+    background: #388e3c;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.no-session-message .btn:hover {
+    background: #2e7d32;
+}
+
+/* Responsive design para el perfil */
+@media (max-width: 768px) {
+    .container.de.perfil {
+        margin: 1rem;
+        padding: 1rem;
+    }
+    
+    .profile-data {
+        gap: 1rem;
+    }
+    
+    .profile-field {
+        padding: 0.8rem;
+    }
+    
+    .profile-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .profile-actions .btn {
+        width: 100%;
+        max-width: 200px;
+    }
+}
+
+/* Centrar el formulario de registro solo en Unete.html */
+#registro-wrapper {
+    display: flex;
+    justify-content: center; /* centra horizontalmente */
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+#registroForm {
+    max-width: 400px; /* ancho máximo del formulario */
+    width: 100%;      /* rellena hasta el máximo permitido */
+}
+
+.carrito .totales {
+    display: flex;
+    justify-content: space-between; /* mantiene el "Total:" a la izquierda y el monto a la derecha */
+    align-items: center;            /* centra verticalmente el texto */
+    padding: 10px 850px;             /* espacio interno para que no quede pegado a los bordes */
+    background-color: #f9f9f9;      /* opcional: un fondo ligero para diferenciar */
+    border-radius: 8px;             /* bordes redondeados */
+    margin-top: 10px;               /* separación del resto de la lista */
+}
+
+.carrito .totales strong {
+    font-weight: 700;
+    color: #2E8B57;                 /* mismo color de precios */
+}
+
+.carrito a.btn.btn-secondary {
+    display: block;         /* hace que el botón sea un bloque para poder centrarlo */
+    width: fit-content;     /* que el ancho sea solo el del contenido */
+    margin: 15px auto 0;    /* centra horizontalmente y deja un margen superior */
 }
